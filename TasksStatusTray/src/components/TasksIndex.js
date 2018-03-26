@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class TasksIndex extends Component {
   renderActionButtons() {
@@ -37,9 +37,7 @@ class TasksIndex extends Component {
     if (!activeTask) {
       return (
         <div style={styles.container}>
-          <h3>
-            No Active tasks.
-          </h3>
+          <h3>No Active tasks.</h3>
         </div>
       );
     }
@@ -47,7 +45,10 @@ class TasksIndex extends Component {
     return (
       <div style={styles.container}>
         <h2>{`Time Left ${timer.display}`}</h2>
-        <h4>{`Current Task: ${activeTask.task}`}</h4>
+        <div>
+          <h4>Current Task:</h4>
+          <h5>{activeTask.task}</h5>
+        </div>
         {this.renderActionButtons()}
       </div>
     );
@@ -56,18 +57,18 @@ class TasksIndex extends Component {
 
 const styles = {
   container: {
-    height: "100%",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-around",
-    textAlign: "center"
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    textAlign: 'center'
   },
   buttonContainer: {
-    display: "flex",
-    flexDirection: "column"
+    display: 'flex',
+    flexDirection: 'column'
   },
   button: {
-    marginBottom: "15px"
+    marginBottom: '15px'
   }
 };
 

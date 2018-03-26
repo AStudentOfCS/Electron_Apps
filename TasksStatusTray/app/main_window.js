@@ -8,11 +8,12 @@ class MainWindow extends BrowserWindow {
       width: 300,
       frame: false,
       resizable: false,
-      show: false
+      show: false,
+      webPreferences: { backgroundThrottling: false } // Whether to throttle animations and timers when the page becomes background.
     });
 
     this.loadURL(url);
-    this.on('blur', this.onBlur);
+    this.on('blur', this.onBlur.bind(this));
   }
 
   onBlur() {

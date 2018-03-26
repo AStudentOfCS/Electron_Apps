@@ -8,8 +8,8 @@ class TasksTray extends Tray {
     this.mainWindow = mainWindow;
 
     this.setToolTip('Tasks App');
-    this.on('click', this.onClick);
-    this.on('right-click', this.onRightClick);
+    this.on('click', this.onClick.bind(this));
+    this.on('right-click', this.onRightClick.bind(this));
   }
 
   onClick(event, bounds) {

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Settings extends Component {
   constructor(props) {
@@ -22,23 +22,21 @@ class Settings extends Component {
 
     if (time == propsTime && unit == propsUnit) {
       // double equals to avoid type check
-      return "btn disabled";
+      return 'btn disabled';
     }
 
     if (this.props.timer.active) {
-      return "btn disabled";
+      return 'btn disabled';
     }
 
-    return "btn";
+    return 'btn';
   };
 
   render() {
     return (
       <div style={styles.container}>
         <ul className="collection with-header">
-          <li className="collection-header">
-            Settings
-          </li>
+          <li className="collection-header">Settings</li>
           <form onSubmit={this.onSubmit}>
             <li className="collection-item">
               <p>Initial Duration</p>
@@ -61,8 +59,10 @@ class Settings extends Component {
                 <option value="hours">Hours</option>
               </select>
             </li>
-            <li className="collection-item right">
-              <button type="submit" className={this.buttonStyle()}>Save</button>
+            <li className="collection-item center">
+              <button type="submit" className={this.buttonStyle()}>
+                Save
+              </button>
             </li>
           </form>
         </ul>
@@ -76,11 +76,11 @@ class Settings extends Component {
 
 const styles = {
   container: {
-    display: "flex",
-    flexDirection: "column"
+    display: 'flex',
+    flexDirection: 'column'
   },
   pointer: {
-    cursor: "pointer"
+    cursor: 'pointer'
   }
 };
 
