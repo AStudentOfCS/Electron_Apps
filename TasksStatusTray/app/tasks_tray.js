@@ -1,5 +1,5 @@
 const electron = require('electron');
-const { Tray } = electron;
+const { Tray, Menu, app } = electron;
 
 class TasksTray extends Tray {
   constructor(iconPath, mainWindow) {
@@ -9,6 +9,7 @@ class TasksTray extends Tray {
 
     this.setToolTip('Tasks App');
     this.on('click', this.onClick);
+    this.on('right-click', this.onRightClick);
   }
 
   onClick(event, bounds) {
@@ -32,6 +33,17 @@ class TasksTray extends Tray {
 
       this.mainWindow.show();
     }
+  }
+
+  onRightClick() {
+    const menuConfig = Menu.buildFromTemplate([
+      {
+        label: 'Quit',
+        click: () => app.quit()
+      }
+    ]);
+
+    this.popUpContextMenu(menuConfig);
   }
 }
 
